@@ -40,5 +40,5 @@ def dtable(icd_10,diagnoses,new_group):
   final_data=final_data[['subject_id','hadm_id','GROUP_DESC','Icd_code']]
   final_data['cnt']=1
   table = pd.pivot_table(final_data, values='cnt', index=['subject_id','hadm_id'],columns=['GROUP_DESC'], aggfunc='sum')
-  final_df = pd.DataFrame(table.to_records())
-  return final_df
+  final_df_ = pd.DataFrame(table.to_records())
+  return final_df_
